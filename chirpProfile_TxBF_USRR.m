@@ -60,21 +60,22 @@ params.NumAnglesToSweep = length(params.anglesToSteer);
 %% chirp/profile parameters
 nchirp_loops = 64;
 Num_Frames = 4;
-params.Start_Freq_GHz			=	77;								% starting fequency for chirp, make sure the entire BW is within 76~77 or 77~81
-params.Slope_MHzperus			=   79;                              % MHz/us
-params.Idle_Time_us             =	5;                              % us
-params.Tx_Start_Time_us         =   0;                              % us
-params.Adc_Start_Time_us		=	6;                              % us
-params.Ramp_End_Time_us		    =	40;                             % us
-params.Sampling_Rate_ksps		=	8000;							% ksps
-params.Samples_per_Chirp		=	256;    						% Number of samples per chirp
-params.Rx_Gain_dB				=	40;								% dB
+params.Start_Freq_GHz			=	77;		% starting fequency for chirp, make sure the entire BW is within 76~77 or 77~81
+params.Slope_MHzperus			=   79;     % MHz/us
+params.Idle_Time_us             =	5;      % us
+params.Tx_Start_Time_us         =   0;      % us
+params.Adc_Start_Time_us		=	6;      % us
+params.Ramp_End_Time_us		    =	40;     % us
+params.Sampling_Rate_ksps		=	8000;	% ksps
+params.Samples_per_Chirp		=	256;    % Number of samples per chirp
+params.Rx_Gain_dB				=	40;		% dB
 % Frame config
 params.nchirp_loops			    =	nchirp_loops;							% Number of chirps per frame
 params.Num_Frames				=	Num_Frames;								% number of frames to collect data
 params.Dutycycle                =   0.5;                            % (ON duration)/(ON+OFF duration)
 params.Chirp_Duration_us        =   (params.Ramp_End_Time_us+params.Idle_Time_us); % us
-params.NumberOfSamplesPerChannel = params.Samples_per_Chirp * nchirp_loops * params.NumAnglesToSweep *params.Num_Frames; %number of ADC samples received per channel. this value is used in HSDC for data capture
+params.NumberOfSamplesPerChannel = params.Samples_per_Chirp * nchirp_loops * params.NumAnglesToSweep *params.Num_Frames;
+%number of ADC samples received per channel. this value is used in HSDC for data capture
 
 
 %d = 0.5*actual wavelength/wavelength for antenna design = 0.5 * actual center frequency/board antenna design frequency
